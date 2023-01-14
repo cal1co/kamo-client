@@ -1,0 +1,58 @@
+.NavBar {
+    width: auto;
+    height:4rem;
+    background-color:#1d98f5;
+    display:flex;
+    padding:16px;
+}
+.kamo-logo{
+    display:flex;
+    left:20%;
+    width:auto;
+    height:auto;
+}
+.kamo-title {
+    padding-left:20px;
+    text-align:center;
+    color:white;
+    font-weight:800;
+    letter-spacing:4px;
+    font-size:45px;
+    font-style:italic;
+
+}
+.kamo-body {
+    position: relative;
+    width: 4.5rem;
+    height: 4.5rem;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+    top:50%;
+    transform:translateY(-50%);
+}
+.kamo-beak{
+    position: absolute;
+    width: 65%;
+    height: 40%;
+    left: 18%;
+    top: 40%;
+    
+    background: #FFAF38;
+    border-radius: 25px;
+}
+.kamo-eye {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    top: 20%;
+    
+    background: #000000;
+    border-radius: 12px;
+}
+.kamo-eye-left {
+    left:30%
+}
+.kamo-eye-right {
+    left: 60%;
+}
