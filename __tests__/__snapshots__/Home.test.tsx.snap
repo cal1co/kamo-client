@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`that landing page component renders 1`] = `
+<div
+  class="home"
+  data-testid="landing-page"
+>
+  Hello, World!
+</div>
+`;
