@@ -1,0 +1,86 @@
+.sign-up-modal {
+    display:flex;
+    position:relative; 
+    /* background: white; */
+    width:30rem;
+    height: 35rem;
+    top: 15%;
+    left:10%;
+}
+.sign-up-model > * {
+    font-family: 'inter'
+}
+.signup-form-field {
+    position:relative;
+    margin-top:15px;
+    width:fit-content;
+}
+.signup-form-field > input {
+    padding:10px;
+    padding-top:15px;
+}
+label {
+    position:absolute;
+    left:10px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:1em;
+    cursor:text;
+    transition: .2s ease-in-out;
+    color:rgb(112, 112, 112);
+}
+.signup input {
+    height:30px;
+    width:300px;
+    border-radius:10px;
+    border:1px solid rgb(128, 127, 127);
+}
+.signup input:focus {
+    outline:none;
+}
+.signup input:focus + label {
+    font-size:0.75em;
+    top:20%;
+    transform: translateY(-50%);
+}
+.focused-input-field {
+    font-size:0.75em;
+
+    top:20%;
+    transform: translateY(-50%);
+}
+.signup {
+    display:flex-box;
+    position:relative;
+    top:50%;
+    left:50%;
+    height:200px;
+    width:310px;
+    justify-content:space-between;
+    transform:translate(-50%, -50%);
+}
+.input-error > input {
+    border: 1px solid #f1624e !important;
+}
+.input-error > * {
+    color: #f1624e;
+}
+.successful-input > input {
+    transition: .2s ease-in-out;
+    border: 1px solid #71f14e !important;
+}
+.successful-input > label {
+    color: #71f14e;
+}
+
+.create-account-confirmation {
+    width:321.5px;
+    background-color:black;
+    border:none;
+    border-radius:20px;
+    height:40px;
+    margin-top:10px;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+}

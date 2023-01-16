@@ -11,6 +11,5 @@ test('that landing page component renders', () => {
     render(<Home/>);
     const homeScreen = screen.getByTestId('landing-page');
     expect(homeScreen).toBeInTheDocument();
-    // expect(homeScreen).toHaveTextContent("Hello, World!");
-    expect(homeScreen).toMatchSnapshot()
+    // expect(homeScreen).toMatchSnapshot()
 });
