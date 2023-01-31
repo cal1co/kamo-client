@@ -64,3 +64,9 @@
 .kamo-eye-right {
     left: 60%;
 }
+
+.chatLink {
+    display:flex;
+    position:relative;
+    left:50%;
+}

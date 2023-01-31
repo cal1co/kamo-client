@@ -78,7 +78,7 @@ function SignupModal() {
 
                     <div className={emailInputAttempted && emailIsReal ? "signup-form-field successful-input": "signup-form-field"} data-testid="signup-email-wrapper" >
                         <input onChange={handleEmailInput} type="text" id="email-signup" data-testid="email-input-field"/>
-                        <label htmlFor="email" className={email ? "focused-input-field" : ""}>Email address</label>
+                        <label htmlFor="email-signup" className={email ? "focused-input-field" : ""}>Email address</label>
                     </div>
                     <div className={passwordConfirmAttempted && password == passwordConfirm && password !== "" ? "signup-form-field successful-input": "signup-form-field"} data-testid="signup-password-wrapper">
                         <input onChange={handlePasswordInput} type={false ? "text" : "password"} id="password-signup" data-testid="password-input-field"/>
