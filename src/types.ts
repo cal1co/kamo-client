@@ -11,4 +11,5 @@ export type axiosConfig = {
 export type LocalStorageLoginObject = {
     token: String
     username: String
+    id: Number
 }

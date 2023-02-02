@@ -4,8 +4,12 @@ import axios from 'axios';
 import { axiosConfig } from '../types';
 
 function SignupModal() {
+// CLEAN ALL OF THIS UP, THERE ARE FAR NEATER WAYS TO DO THIS...
 
+// TODO:
+// CHECK IF USERNAME OR PASSWORD IS TAKEN - 
     const [email, setEmail] = useState(String)
+    const [username, setUsername] = useState(String)
     const [emailInputAttempted, setEmailInputAttempted] = useState(false)
     const [emailIsReal, setEmailIsReal] = useState(Boolean)
     const [password, setPassword] = useState(String)
@@ -22,7 +26,7 @@ function SignupModal() {
                 "Access-Control-Allow-Origin": true
             },
             data: JSON.stringify({
-                email: email, password: password
+                email: email, username: username, password: password
             })
         }
 
@@ -31,6 +35,7 @@ function SignupModal() {
             axios(config)
             .then((res) => {
                 console.log("RESPONSE: ", res.data)
+                localStorage.setItem('user', JSON.stringify(res.data));
             })
             .catch((err) => {
                 console.log("ERROR: ", err)
@@ -38,8 +43,7 @@ function SignupModal() {
         } else {
             console.log("Error with fields");
         }
-    }
-
+    };
     const handleEmailInput = (event: React.FormEvent<HTMLInputElement>): void => {
         setEmail(event.currentTarget.value);
         setEmailInputAttempted(true);
@@ -55,6 +59,11 @@ function SignupModal() {
             emailFieldTarget.parentElement?.classList.add("input-error")
         }
     };
+
+    const handleUsernameInput = (event: React.FormEvent<HTMLInputElement>):void => {
+        setUsername(event.currentTarget.value);
+    };
+
     const handlePasswordInput = (event: React.FormEvent<HTMLInputElement>): void => {
         setPassword(event.currentTarget.value);
     };
@@ -79,6 +88,10 @@ function SignupModal() {
                     <div className={emailInputAttempted && emailIsReal ? "signup-form-field successful-input": "signup-form-field"} data-testid="signup-email-wrapper" >
                         <input onChange={handleEmailInput} type="text" id="email-signup" data-testid="email-input-field"/>
                         <label htmlFor="email-signup" className={email ? "focused-input-field" : ""}>Email address</label>
+                    </div>
+                    <div className={"signup-form-field"} data-testid="signup-username-wrapper" >
+                        <input onChange={handleUsernameInput} type="text" id="username-signup" data-testid="username-input-field"/>
+                        <label htmlFor="username-signup" className={username ? "focused-input-field" : ""}>Username</label>
                     </div>
                     <div className={passwordConfirmAttempted && password == passwordConfirm && password !== "" ? "signup-form-field successful-input": "signup-form-field"} data-testid="signup-password-wrapper">
                         <input onChange={handlePasswordInput} type={false ? "text" : "password"} id="password-signup" data-testid="password-input-field"/>
